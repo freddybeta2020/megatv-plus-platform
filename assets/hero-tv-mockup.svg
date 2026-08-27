@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 600" width="100%" height="100%">
+  <defs>
+    <!-- Gradientes -->
+    <linearGradient id="tvFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="screenBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#09132b"/>
+      <stop offset="50%" stop-color="#050a18"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="stadiumGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb" stop-opacity="0.8"/>
+      <stop offset="40%" stop-color="#06b6d4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#050b1a" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="orangeAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <!-- Sombras y Resplandores -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="tvShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#000" flood-opacity="0.8" />
+    </filter>
+  </defs>
+
+  <!-- Resplandor Ambiental Trasero (Ambient LED Glow) -->
+  <ellipse cx="500" cy="270" rx="420" ry="240" fill="#2563eb" opacity="0.25" filter="url(#neonGlow)"/>
+  <ellipse cx="650" cy="220" rx="280" ry="180" fill="#f97316" opacity="0.2" filter="url(#neonGlow)"/>
+
+  <!-- Soporte / Base de la TV -->
+  <path d="M 450 510 L 550 510 L 570 545 L 430 545 Z" fill="#334155"/>
+  <rect x="360" y="542" width="280" height="8" rx="4" fill="#64748b"/>
+
+  <!-- Marco Exterior del Smart TV -->
+  <rect x="70" y="40" width="860" height="470" rx="16" fill="url(#tvFrame)" stroke="#334155" stroke-width="3" filter="url(#tvShadow)"/>
+
+  <!-- Pantalla 4K -->
+  <rect x="80" y="50" width="840" height="450" rx="10" fill="url(#screenBg)"/>
+
+  <!-- CONTENIDO DE LA PANTALLA: Transmisión en Vivo (Fútbol / Estadio) -->
+  <rect x="80" y="50" width="840" height="450" fill="url(#stadiumGlow)"/>
+
+  <!-- Luces de Estadio y Campo de Juego -->
+  <ellipse cx="500" cy="450" rx="400" ry="140" fill="#10b981" opacity="0.35"/>
+  <ellipse cx="500" cy="450" rx="350" ry="100" fill="#047857" opacity="0.4"/>
+  <circle cx="500" cy="450" r="70" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+  <line x1="150" y1="450" x2="850" y2="450" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+
+  <!-- Siluetas de Jugadores / Acción Deportiva -->
+  <circle cx="480" cy="370" r="14" fill="#ffffff" opacity="0.9"/>
+  <path d="M 470 384 L 490 384 L 495 420 L 485 410 L 478 440 L 468 410 Z" fill="#ffffff" opacity="0.9"/>
+  
+  <!-- Balón en Movimiento con estela -->
+  <circle cx="535" cy="385" r="9" fill="#ffffff" filter="url(#neonGlow)"/>
+  <circle cx="535" cy="385" r="7" fill="#f8fafc"/>
+  <path d="M 505 395 Q 520 390 535 385" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+
+  <!-- UI Overlay de la App IPTV (Header de la TV) -->
+  <rect x="80" y="50" width="840" height="60" fill="rgba(6, 11, 25, 0.85)"/>
+  
+  <!-- Logo de App en Pantalla -->
+  <circle cx="115" cy="80" r="15" fill="url(#orangeAccent)"/>
+  <polygon points="111,73 122,80 111,87" fill="#ffffff"/>
+  <text x="140" y="86" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="18" fill="#ffffff">MEGATV+ <tspan fill="#f97316">4K</tspan></text>
+
+  <!-- Indicador LIVE / EN VIVO -->
+  <rect x="740" y="68" width="80" height="24" rx="12" fill="rgba(239, 68, 68, 0.2)" stroke="#ef4444" stroke-width="1.5"/>
+  <circle cx="755" cy="80" r="4" fill="#ef4444"/>
+  <text x="765" y="85" font-family="sans-serif" font-weight="800" font-size="11" fill="#ef4444">EN VIVO</text>
+
+  <rect x="830" y="68" width="75" height="24" rx="4" fill="url(#orangeAccent)"/>
+  <text x="840" y="84" font-family="sans-serif" font-weight="800" font-size="11" fill="#ffffff">UHD 4K</text>
+
+  <!-- Tarjeta de Información del Partido / Evento -->
+  <rect x="110" y="130" width="340" height="75" rx="10" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(255,255,255,0.15)"/>
+  <text x="125" y="155" font-family="sans-serif" font-weight="800" font-size="14" fill="#06b6d4">CHAMPIONS LEAGUE • FINAL</text>
+  <text x="125" y="178" font-family="sans-serif" font-weight="700" font-size="16" fill="#ffffff">Real Madrid vs Manchester City</text>
+  <text x="125" y="195" font-family="sans-serif" font-weight="600" font-size="11" fill="#94a3b8">Servidor VIP 01 • Anti-Freeze 9.0 • Audio 5.1</text>
+
+  <!-- Mini Carrusel Inferior de Canales Rápidos (EPG) -->
+  <rect x="80" y="420" width="840" height="80" fill="rgba(6, 11, 25, 0.9)"/>
+  
+  <!-- Canal 1 -->
+  <rect x="110" y="432" width="130" height="56" rx="8" fill="rgba(37, 99, 235, 0.25)" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="125" y="455" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">⚽ ESPN Premium</text>
+  <text x="125" y="472" font-family="sans-serif" font-weight="600" font-size="10" fill="#38bdf8">Fútbol en Directo</text>
+
+  <!-- Canal 2 -->
+  <rect x="255" y="432" width="130" height="56" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255,255,255,0.1)"/>
+  <text x="270" y="455" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">🎬 HBO Max Cine</text>
+  <text x="270" y="472" font-family="sans-serif" font-weight="600" font-size="10" fill="#94a3b8">Estreno 4K</text>
+
+  <!-- Canal 3 -->
+  <rect x="400" y="432" width="130" height="56" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255,255,255,0.1)"/>
+  <text x="415" y="455" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">🥊 UFC Fight Pass</text>
+  <text x="415" y="472" font-family="sans-serif" font-weight="600" font-size="10" fill="#94a3b8">Main Card PPV</text>
+
+  <!-- Canal 4 -->
+  <rect x="545" y="432" width="130" height="56" rx="8" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255,255,255,0.1)"/>
+  <text x="560" y="455" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">🏎️ Formula 1 F1</text>
+  <text x="560" y="472" font-family="sans-serif" font-weight="600" font-size="10" fill="#94a3b8">Gran Premio Live</text>
+
+  <!-- Botón Play Central Translúcido -->
+  <circle cx="500" cy="275" r="45" fill="rgba(37, 99, 235, 0.85)" stroke="#60a5fa" stroke-width="2" filter="url(#neonGlow)"/>
+  <polygon points="492,257 518,275 492,293" fill="#ffffff"/>
+</svg>

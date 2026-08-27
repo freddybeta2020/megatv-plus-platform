@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="screenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="60%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Luces de fondo -->
+  <circle cx="450" cy="220" r="180" fill="#2563eb" opacity="0.2" filter="url(#glow)"/>
+  <circle cx="680" cy="280" r="120" fill="#f97316" opacity="0.15" filter="url(#glow)"/>
+
+  <!-- 1. SMART TV (Centro - Grande) -->
+  <g transform="translate(180, 40)">
+    <!-- Base TV -->
+    <path d="M 230 310 L 310 310 L 330 335 L 210 335 Z" fill="#334155"/>
+    <rect x="170" y="333" width="200" height="6" rx="3" fill="#64748b"/>
+    <!-- Marco TV -->
+    <rect x="0" y="0" width="540" height="310" rx="12" fill="#0f172a" stroke="#334155" stroke-width="3"/>
+    <!-- Pantalla -->
+    <rect x="10" y="10" width="520" height="290" rx="6" fill="url(#screenGrad)"/>
+    <!-- UI IPTV TV -->
+    <rect x="10" y="10" width="520" height="35" fill="rgba(0,0,0,0.6)"/>
+    <circle cx="30" cy="27" r="8" fill="#f97316"/>
+    <text x="46" y="32" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">MEGATV+</text>
+    <rect x="440" y="18" width="75" height="18" rx="4" fill="#ef4444"/>
+    <text x="450" y="31" font-family="sans-serif" font-weight="700" font-size="10" fill="#ffffff">🔴 4K LIVE</text>
+    <!-- Contenido TV -->
+    <circle cx="270" cy="155" r="30" fill="rgba(37,99,235,0.7)" filter="url(#glow)"/>
+    <polygon points="264,142 282,155 264,168" fill="#ffffff"/>
+    <text x="270" y="210" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="14" fill="#ffffff">Smart TV (Samsung / LG / Sony)</text>
+    <text x="270" y="230" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="11" fill="#94a3b8">Bay TV • IBO Player • SmartOne</text>
+  </g>
+
+  <!-- 2. SMARTPHONE / IPHONE (Izquierda) -->
+  <g transform="translate(60, 160)">
+    <rect x="0" y="0" width="110" height="220" rx="18" fill="#020617" stroke="#475569" stroke-width="2"/>
+    <rect x="6" y="8" width="98" height="204" rx="12" fill="url(#screenGrad)"/>
+    <!-- Notch / Cámara -->
+    <rect x="35" y="12" width="40" height="8" rx="4" fill="#020617"/>
+    <!-- UI Móvil -->
+    <circle cx="55" cy="100" r="18" fill="#f97316"/>
+    <polygon points="51,92 63,100 51,108" fill="#ffffff"/>
+    <text x="55" y="140" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="10" fill="#ffffff">Celular iOS / Android</text>
+    <text x="55" y="155" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="8" fill="#38bdf8">Llévalo contigo</text>
+  </g>
+
+  <!-- 3. TABLET / IPAD (Derecha Media) -->
+  <g transform="translate(670, 120)">
+    <rect x="0" y="0" width="170" height="240" rx="14" fill="#020617" stroke="#475569" stroke-width="2"/>
+    <rect x="8" y="8" width="154" height="224" rx="8" fill="url(#screenGrad)"/>
+    <circle cx="85" cy="110" r="20" fill="rgba(37,99,235,0.8)"/>
+    <polygon points="80,102 94,110 80,118" fill="#ffffff"/>
+    <text x="85" y="150" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#ffffff">Tablet & iPad</text>
+    <text x="85" y="168" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="9" fill="#94a3b8">GSE Smart • Smarters</text>
+  </g>
+
+  <!-- 4. AMAZON FIRE STICK / TV STICK (Frente Inferior) -->
+  <g transform="translate(360, 320)">
+    <rect x="0" y="0" width="180" height="50" rx="8" fill="#0f172a" stroke="#f97316" stroke-width="1.5" filter="url(#glow)"/>
+    <circle cx="25" cy="25" r="12" fill="url(#orangeGrad)"/>
+    <path d="M 21 21 L 28 25 L 21 29 Z" fill="#ffffff"/>
+    <text x="46" y="27" font-family="sans-serif" font-weight="800" font-size="12" fill="#ffffff">Fire TV Stick & Box</text>
+    <text x="46" y="41" font-family="sans-serif" font-weight="600" font-size="9" fill="#fb923c">TiviMate Recomendada</text>
+  </g>
+</svg>

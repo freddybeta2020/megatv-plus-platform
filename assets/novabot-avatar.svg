@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="botBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+
+    <linearGradient id="eyeGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="100%" stop-color="#4facfe"/>
+    </linearGradient>
+
+    <filter id="avatarGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Fondo Circular -->
+  <circle cx="100" cy="100" r="95" fill="url(#botBg)"/>
+  <circle cx="100" cy="100" r="88" fill="#0b1120"/>
+
+  <!-- Antena de IA -->
+  <line x1="100" y1="35" x2="100" y2="52" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="30" r="8" fill="#f97316" filter="url(#avatarGlow)"/>
+
+  <!-- Cabeza del Robot -->
+  <rect x="45" y="52" width="110" height="85" rx="24" fill="#1e293b" stroke="#3b82f6" stroke-width="3"/>
+
+  <!-- Visor / Pantalla de ojos -->
+  <rect x="58" y="66" width="84" height="42" rx="14" fill="#020617"/>
+
+  <!-- Ojos LED Expresivos (Cyan Glowing) -->
+  <ellipse cx="78" cy="87" rx="9" ry="11" fill="url(#eyeGlow)" filter="url(#avatarGlow)"/>
+  <ellipse cx="122" cy="87" rx="9" ry="11" fill="url(#eyeGlow)" filter="url(#avatarGlow)"/>
+
+  <!-- Sonrisa Digital -->
+  <path d="M 86 118 Q 100 128 114 118" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" fill="none"/>
+
+  <!-- Auriculares Laterales -->
+  <rect x="35" y="70" width="10" height="30" rx="4" fill="#f97316"/>
+  <rect x="155" y="70" width="10" height="30" rx="4" fill="#f97316"/>
+
+  <!-- Cuerpo / Hombros -->
+  <path d="M 50 160 C 50 140 150 140 150 160 L 165 190 L 35 190 Z" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+  <circle cx="100" cy="165" r="8" fill="#f97316"/>
+</svg>
