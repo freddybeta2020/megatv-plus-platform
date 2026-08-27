@@ -147,6 +147,42 @@ const IPTV_CONFIG = {
             image: "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg"
         },
         {
+            title: "Moana 2",
+            type: "movie",
+            category: "infantil",
+            platform: "Disney+ 4K",
+            genre: "Animación / Aventura",
+            rating: "8.0",
+            year: "2026",
+            quality: "4K HDR",
+            badge: "TAQUILLERA",
+            image: "https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+        },
+        {
+            title: "Alien: Romulus",
+            type: "movie",
+            category: "cine",
+            platform: "20th Century 4K",
+            genre: "Terror / Sci-Fi",
+            rating: "7.6",
+            year: "2026",
+            quality: "4K IMAX",
+            badge: "ESTRENO",
+            image: "https://image.tmdb.org/t/p/w500/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg"
+        },
+        {
+            title: "Venom: El Último Baile",
+            type: "movie",
+            category: "cine",
+            platform: "Sony / Marvel 4K",
+            genre: "Acción / Superhéroes",
+            rating: "7.8",
+            year: "2026",
+            quality: "4K UHD",
+            badge: "TOP CINE",
+            image: "https://image.tmdb.org/t/p/w500/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg"
+        },
+        {
             title: "House of the Dragon",
             type: "series",
             category: "series",
