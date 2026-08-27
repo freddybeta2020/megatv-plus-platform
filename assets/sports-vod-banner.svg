@@ -42,7 +42,7 @@
     <rect width="260" height="260" rx="14" fill="url(#cardGrad1)" stroke="rgba(37,99,235,0.4)" stroke-width="2"/>
     <circle cx="130" cy="90" r="40" fill="rgba(37,99,235,0.3)"/>
     <text x="130" y="102" text-anchor="middle" font-size="34">⚽</text>
-    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Fútbol & Deportes</text>
+    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Fútbol &amp; Deportes</text>
     <text x="130" y="185" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="12" fill="#38bdf8">Champions, LaLiga, F1, UFC</text>
     <rect x="50" y="210" width="160" height="28" rx="14" fill="rgba(37,99,235,0.8)"/>
     <text x="130" y="228" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#ffffff">CALIDAD 4K Y FHD</text>
@@ -53,7 +53,7 @@
     <rect width="260" height="260" rx="14" fill="url(#cardGrad2)" stroke="rgba(249,115,22,0.4)" stroke-width="2"/>
     <circle cx="130" cy="90" r="40" fill="rgba(249,115,22,0.3)"/>
     <text x="130" y="102" text-anchor="middle" font-size="34">🍿</text>
-    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Cine & Series VOD</text>
+    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Cine &amp; Series VOD</text>
     <text x="130" y="185" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="12" fill="#fb923c">Estrenos 2026 Semanales</text>
     <rect x="50" y="210" width="160" height="28" rx="14" fill="rgba(249,115,22,0.8)"/>
     <text x="130" y="228" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#ffffff">+60,000 TÍTULOS</text>
@@ -64,9 +64,9 @@
     <rect width="260" height="260" rx="14" fill="url(#cardGrad3)" stroke="rgba(16,185,129,0.4)" stroke-width="2"/>
     <circle cx="130" cy="90" r="40" fill="rgba(16,185,129,0.3)"/>
     <text x="130" y="102" text-anchor="middle" font-size="34">🌍</text>
-    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Mundo & Familia</text>
+    <text x="130" y="160" text-anchor="middle" font-family="sans-serif" font-weight="800" font-size="18" fill="#ffffff">Mundo &amp; Familia</text>
     <text x="130" y="185" text-anchor="middle" font-family="sans-serif" font-weight="600" font-size="12" fill="#34d399">Canales de +50 Países</text>
     <rect x="50" y="210" width="160" height="28" rx="14" fill="rgba(16,185,129,0.8)"/>
-    <text x="130" y="228" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#ffffff">INFANTIL & NOTICIAS</text>
+    <text x="130" y="228" text-anchor="middle" font-family="sans-serif" font-weight="700" font-size="11" fill="#ffffff">INFANTIL &amp; NOTICIAS</text>
   </g>
 </svg>
