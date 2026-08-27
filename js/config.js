@@ -202,8 +202,8 @@ const IPTV_CONFIG = {
             a: "Incluye todos los canales deportivos de Latinoamérica, España, USA e internacionales: Champions League, Copa Libertadores, Premier League, LaLiga, Serie A, Fórmula 1, UFC, NBA, MLB, NFL, canales PPV de boxeo y eventos especiales sin costo adicional."
         },
         {
-            q: "¿El servicio incluye la licencia de activación de apps como IBO Player o Bob Player?",
-            a: "El servicio de MEGATV+ te incluye acceso total a la lista de más de 15,000 canales, películas y series en vivo. Si la aplicación reproductora que decides instalar en tu Smart TV requiere una licencia de activación propia de sus desarrolladores (como IBO Player, Bob Player o SET IPTV), dicho valor es adicional y se cancela por separado."
+            q: "¿Las apps de Smart TV requieren licencia adicional?",
+            a: "El servicio de MEGATV+ te incluye acceso total a la lista de más de 15,000 canales, películas y series en vivo. Si la aplicación reproductora que decides instalar en tu Smart TV requiere una licencia de activación propia de sus desarrolladores (como IBO Player, Bay TV, Bob Player o SET IPTV), dicho valor es propio de la app y se cancela por separado."
         }
     ],
 
