@@ -275,16 +275,17 @@ section {
 }
 
 .logo-icon {
-    width: 42px;
-    height: 42px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #fff;
-    font-size: 1.1rem;
-    box-shadow: 0 0 18px var(--primary-glow);
+    filter: drop-shadow(0 0 12px var(--primary-glow));
+    transition: transform var(--transition-fast);
+}
+
+.logo:hover .logo-icon {
+    transform: scale(1.06);
 }
 
 .logo-text span {
