@@ -1,7 +1,8 @@
 # 🎬 MEGATV+ | Plataforma de Streaming & Conversational AI Landing Page
 
 <div align="center">
-  <img src="assets/hero-tv-mockup.svg" alt="MEGATV+ Smart TV Interface Preview" width="850" />
+
+![MEGATV+ Smart TV Interface](assets/hero-tv-mockup.svg)
 
   <br />
 
@@ -31,11 +32,15 @@ Desarrollado bajo una arquitectura **Vanilla (Zero-Dependencies)**, el sitio web
 ## 🚀 Capturas y Recursos Visuales
 
 <div align="center">
-  <img src="assets/devices-showcase.svg" alt="Multi-Device Ecosystem Showcase" width="800" />
-  <p><em>Ecosistema multi-plataforma: Smart TVs, Firestick, Android TV, Smartphones y PC</em></p>
 
-  <img src="assets/sports-vod-banner.svg" alt="Sports & VOD Streaming Catalog" width="800" />
-  <p><em>Vitrina modular de contenidos deportivos en vivo y catálogo de cine/series</em></p>
+![Multi-Device Ecosystem Showcase](assets/devices-showcase.svg)
+*Ecosistema multi-plataforma: Smart TVs, Firestick, Android TV, Smartphones y PC*
+
+<br/><br/>
+
+![Sports & VOD Streaming Catalog](assets/sports-vod-banner.svg)
+*Vitrina modular de contenidos deportivos en vivo y catálogo de cine/series*
+
 </div>
 
 ---
