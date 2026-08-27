@@ -99,12 +99,12 @@ Para clonar y ejecutar este proyecto en tu entorno local:
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/TU-USUARIO/megatv-plus-landing.git
+   git clone https://github.com/freddybeta2020/megatv-plus-platform.git
    ```
 
 2. **Acceder a la carpeta del proyecto:**
    ```bash
-   cd megatv-plus-landing
+   cd megatv-plus-platform
    ```
 
 3. **Ejecutar en el navegador:**
@@ -147,13 +147,13 @@ const IPTV_CONFIG = {
 
 ## 👨‍💻 Acerca del Desarrollador
 
-**Freddy Betancur**  
+**Jhon Fredy Betancur Dávila**  
 🎓 *Técnico en Desarrollo de Software & Estudiante de Ingeniería de Software y Datos*  
 💼 Apasionado por el desarrollo web moderno, arquitectura de software limpia, interfaces interactivas y soluciones de datos eficientes.
 
-* 🌐 **GitHub:** [github.com/tu-usuario](https://github.com)
-* 💼 **LinkedIn:** [linkedin.com/in/tu-perfil](https://linkedin.com)
-* 📧 **Contacto:** `tu-correo@ejemplo.com`
+* 🌐 **GitHub:** [github.com/freddybeta2020](https://github.com/freddybeta2020)
+* 💼 **LinkedIn:** [linkedin.com/in/jhon-fredy-betancur-davila-311a7b2b3](https://www.linkedin.com/in/jhon-fredy-betancur-davila-311a7b2b3/)
+* 📧 **Email:** [freddybeta@hotmail.com](mailto:freddybeta@hotmail.com)
 
 ---
 
