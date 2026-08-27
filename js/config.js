@@ -132,6 +132,130 @@ const IPTV_CONFIG = {
         }
     ],
 
+    // CATÁLOGO DE PELÍCULAS Y SERIES VOD POPULARES
+    vodCatalog: [
+        {
+            title: "Deadpool & Wolverine",
+            type: "movie",
+            category: "cine",
+            platform: "Cine 4K",
+            genre: "Acción / Comedia",
+            rating: "8.1",
+            year: "2026",
+            quality: "4K UHD",
+            badge: "ESTRENO",
+            image: "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "House of the Dragon",
+            type: "series",
+            category: "series",
+            platform: "HBO Max",
+            genre: "Fantasía / Drama",
+            rating: "8.6",
+            year: "2026",
+            quality: "4K HDR",
+            badge: "POPULAR",
+            image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Intensamente 2",
+            type: "movie",
+            category: "infantil",
+            platform: "Disney+ Pixar",
+            genre: "Animación / Familiar",
+            rating: "7.9",
+            year: "2026",
+            quality: "4K FHD",
+            badge: "FAMILIAR",
+            image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Dune: Parte Dos",
+            type: "movie",
+            category: "cine",
+            platform: "Warner Bros",
+            genre: "Ciencia Ficción",
+            rating: "8.5",
+            year: "2026",
+            quality: "4K IMAX",
+            badge: "TOP CINE",
+            image: "https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "The Boys",
+            type: "series",
+            category: "series",
+            platform: "Prime Video",
+            genre: "Acción / Superhéroes",
+            rating: "8.7",
+            year: "2026",
+            quality: "4K UHD",
+            badge: "TENDENCIA",
+            image: "https://images.unsplash.com/photo-1563089145-599997674d42?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Stranger Things 5",
+            type: "series",
+            category: "series",
+            platform: "Netflix",
+            genre: "Ciencia Ficción / Terror",
+            rating: "8.7",
+            year: "2026",
+            quality: "4K Dolby",
+            badge: "EXCLUSIVO",
+            image: "https://images.unsplash.com/photo-1514306191717-452ec28c7814?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Gladiator II",
+            type: "movie",
+            category: "cine",
+            platform: "Paramount 4K",
+            genre: "Épico / Acción",
+            rating: "8.2",
+            year: "2026",
+            quality: "4K UHD",
+            badge: "ESTRENO",
+            image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "The Bear (El Oso)",
+            type: "series",
+            category: "series",
+            platform: "Star+ / FX",
+            genre: "Drama / Comedia",
+            rating: "8.6",
+            year: "2026",
+            quality: "4K FHD",
+            badge: "PREMIADA",
+            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Godzilla x Kong",
+            type: "movie",
+            category: "cine",
+            platform: "Warner 4K",
+            genre: "Acción / Fantasía",
+            rating: "7.4",
+            year: "2026",
+            quality: "4K UHD",
+            badge: "BLOCKBUSTER",
+            image: "https://images.unsplash.com/photo-1578632767115-351597cf2477?w=500&auto=format&fit=crop&q=80"
+        },
+        {
+            title: "Mi Villano Favorito 4",
+            type: "movie",
+            category: "infantil",
+            platform: "Illumination",
+            genre: "Animación / Aventura",
+            rating: "7.5",
+            year: "2026",
+            quality: "4K FHD",
+            badge: "INFANTIL",
+            image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=500&auto=format&fit=crop&q=80"
+        }
+    ],
+
     // DISPOSITIVOS Y APPS COMPATIBLES
     devicesList: [
         {

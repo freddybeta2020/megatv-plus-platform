@@ -78,6 +78,7 @@
             <nav class="nav-menu" id="navMenu">
                 <a href="#inicio" class="nav-link active">Inicio</a>
                 <a href="#beneficios" class="nav-link">Beneficios</a>
+                <a href="#catalogo" class="nav-link">Catálogo VOD</a>
                 <a href="#planes" class="nav-link">Planes</a>
                 <a href="#dispositivos" class="nav-link">Dispositivos</a>
                 <a href="#faq" class="nav-link">Preguntas</a>
@@ -239,6 +240,40 @@
             <div style="margin-top: 4rem; text-align: center;">
                 <img src="assets/sports-vod-banner.svg" alt="Deportes en Vivo, Cine y Series VOD en 4K" style="width: 100%; max-width: 1050px; height: auto; margin: 0 auto; border-radius: 16px; border: 1px solid var(--border-color); box-shadow: var(--shadow-lg);">
             </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         4.5. CATÁLOGO VOD DE CINE Y SERIES (CARRUSEL DINÁMICO)
+         ========================================================================== -->
+    <section class="vod-section" id="catalogo">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag"><i class="fas fa-film"></i> Catálogo Actualizado 24/7</span>
+                <h2 class="section-title">Estrenos de Cine, Series y <span class="gradient-text">Películas VOD</span></h2>
+                <p class="section-subtitle">Disfruta de más de 50,000 películas y series actualizadas de Netflix, HBO Max, Disney+, Prime Video y Apple TV+ en resolución 4K Ultra HD.</p>
+                
+                <!-- Filtros de Categoría VOD -->
+                <div class="vod-filter-tabs" id="vodFilterTabs">
+                    <button class="vod-filter-btn active" data-filter="all"><i class="fas fa-fire"></i> Todos los Estrenos</button>
+                    <button class="vod-filter-btn" data-filter="cine"><i class="fas fa-ticket-alt"></i> Cine &amp; Estrenos</button>
+                    <button class="vod-filter-btn" data-filter="series"><i class="fas fa-tv"></i> Series Populares</button>
+                    <button class="vod-filter-btn" data-filter="infantil"><i class="fas fa-child"></i> Infantil &amp; Familiar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carrusel Infinito de Películas (Marquee Interactivo) -->
+        <div class="vod-marquee-container" id="vodMarqueeWrapper">
+            <div class="vod-marquee-track" id="vodCardsContainer">
+                <!-- Se llena dinámicamente con JavaScript desde config.js -->
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 2.5rem; text-align: center;">
+            <a href="https://wa.me/573013217824?text=Hola!%20Quiero%20solicitar%20mi%20Demo%20Gratis%20de%204%20horas%20para%20probar%20las%20pel%C3%ADculas%20y%20series%20de%20MEGATV%2B." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                <i class="fab fa-whatsapp"></i> Solicitar Demo Gratis para ver Películas &amp; Series
+            </a>
         </div>
     </section>
 

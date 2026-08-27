@@ -6,6 +6,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
     initBrandData();
+    initVodCatalog();
     initPricingTable();
     initDevicesTabs();
     initFaqAccordion();
@@ -318,4 +319,73 @@ function updateYear() {
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
+}
+
+/**
+ * 9. CATÁLOGO Y CARRUSEL VOD DE PELÍCULAS Y SERIES
+ */
+function initVodCatalog() {
+    const filterContainer = document.getElementById("vodFilterTabs");
+    if (!filterContainer || !window.IPTV_CONFIG || !window.IPTV_CONFIG.vodCatalog) return;
+
+    const filterBtns = filterContainer.querySelectorAll(".vod-filter-btn");
+    filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            filterBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            const filter = btn.getAttribute("data-filter");
+            renderVodCatalog(filter);
+        });
+    });
+
+    renderVodCatalog("all");
+}
+
+function renderVodCatalog(filterCategory = "all") {
+    const container = document.getElementById("vodCardsContainer");
+    if (!container || !window.IPTV_CONFIG || !window.IPTV_CONFIG.vodCatalog) return;
+
+    const items = window.IPTV_CONFIG.vodCatalog;
+    const waPhone = window.IPTV_CONFIG.whatsapp.phoneNumber;
+
+    let filteredItems = items;
+    if (filterCategory !== "all") {
+        filteredItems = items.filter(item => item.category === filterCategory);
+    }
+
+    // Si hay pocos elementos, los duplicamos para asegurar un bucle de animación suave continuo
+    let displayList = [...filteredItems, ...filteredItems];
+    if (displayList.length < 10) {
+        displayList = [...displayList, ...displayList];
+    }
+
+    container.innerHTML = "";
+
+    displayList.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "vod-card";
+
+        const waMsg = `Hola! Quiero probar el servicio de MEGATV+ para ver la película/serie *${item.title}* (${item.platform}). ¿Tienen demo gratis disponible?`;
+        const waLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
+
+        card.innerHTML = `
+            <span class="vod-badge">${item.badge}</span>
+            <span class="vod-rating"><i class="fas fa-star"></i> ${item.rating}</span>
+            <img src="${item.image}" alt="${item.title}" class="vod-card-img" loading="lazy">
+            <div class="vod-card-overlay">
+                <div class="vod-platform">${item.platform} • ${item.year}</div>
+                <h4 class="vod-title" title="${item.title}">${item.title}</h4>
+                <div class="vod-genre">
+                    <span>${item.genre}</span>
+                    <span class="vod-quality-tag">${item.quality}</span>
+                </div>
+            </div>
+        `;
+
+        card.addEventListener("click", () => {
+            window.open(waLink, "_blank");
+        });
+
+        container.appendChild(card);
+    });
 }
