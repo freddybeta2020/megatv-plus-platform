@@ -144,7 +144,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K UHD",
             badge: "ESTRENO",
-            image: "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg"
+            image: "https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+            trailerId: "73_1biulkYk"
         },
         {
             title: "Moana 2",
@@ -156,7 +157,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K HDR",
             badge: "TAQUILLERA",
-            image: "https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg"
+            image: "https://image.tmdb.org/t/p/w500/aLVkiINlIeCkcZIzb7XHzPYgO6L.jpg",
+            trailerId: "hDZ7y8RP5HE"
         },
         {
             title: "Alien: Romulus",
@@ -168,7 +170,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K IMAX",
             badge: "ESTRENO",
-            image: "https://image.tmdb.org/t/p/w500/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg"
+            image: "https://image.tmdb.org/t/p/w500/2uSWRTtCG336nuBiG8jOTEUKSy8.jpg",
+            trailerId: "x0XDEhP4MQs"
         },
         {
             title: "Venom: El Último Baile",
@@ -180,7 +183,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K UHD",
             badge: "TOP CINE",
-            image: "https://image.tmdb.org/t/p/w500/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg"
+            image: "https://image.tmdb.org/t/p/w500/vGXptEdgZIhPg3cGlc7e8sNPC2e.jpg",
+            trailerId: "__2bjWbetsA"
         },
         {
             title: "House of the Dragon",
@@ -192,7 +196,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K HDR",
             badge: "POPULAR",
-            image: "https://image.tmdb.org/t/p/w500/7QMsOTMUswlwxJP0rTTZfmz2tX2.jpg"
+            image: "https://image.tmdb.org/t/p/w500/7QMsOTMUswlwxJP0rTTZfmz2tX2.jpg",
+            trailerId: "DotnJ7tTA34"
         },
         {
             title: "Intensamente 2",
@@ -204,7 +209,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K FHD",
             badge: "FAMILIAR",
-            image: "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg"
+            image: "https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+            trailerId: "LEjhY15eCx0"
         },
         {
             title: "Dune: Parte Dos",
@@ -216,7 +222,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K IMAX",
             badge: "TOP CINE",
-            image: "https://image.tmdb.org/t/p/w500/czembW0Rk1Ke7lCJGahbOhdCuhV.jpg"
+            image: "https://image.tmdb.org/t/p/w500/czembW0Rk1Ke7lCJGahbOhdCuhV.jpg",
+            trailerId: "Way9Dexny3w"
         },
         {
             title: "The Boys",
@@ -228,7 +235,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K UHD",
             badge: "TENDENCIA",
-            image: "https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg"
+            image: "https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+            trailerId: "EzFXDvC-2uY"
         },
         {
             title: "Stranger Things",
@@ -240,7 +248,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K Dolby",
             badge: "EXCLUSIVO",
-            image: "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg"
+            image: "https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg",
+            trailerId: "b9EkMc79ZSU"
         },
         {
             title: "Gladiator II",
@@ -252,7 +261,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K UHD",
             badge: "ESTRENO",
-            image: "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg"
+            image: "https://image.tmdb.org/t/p/w500/2cxhvwyEwRlysAmRH4iodkvo0z5.jpg",
+            trailerId: "4rgYUipGJNo"
         },
         {
             title: "The Bear (El Oso)",
@@ -264,7 +274,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K FHD",
             badge: "PREMIADA",
-            image: "https://image.tmdb.org/t/p/w500/eKfVzzEazSIjJMrw9ADa2x8ksLz.jpg"
+            image: "https://image.tmdb.org/t/p/w500/eKfVzzEazSIjJMrw9ADa2x8ksLz.jpg",
+            trailerId: "gBmkI4hnxxI"
         },
         {
             title: "Godzilla x Kong",
@@ -276,7 +287,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K UHD",
             badge: "BLOCKBUSTER",
-            image: "https://image.tmdb.org/t/p/w500/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg"
+            image: "https://image.tmdb.org/t/p/w500/z1p34vh7dEOnLDmyCrlUVLuoDzd.jpg",
+            trailerId: "lV1OOlGwExM"
         },
         {
             title: "Mi Villano Favorito 4",
@@ -288,7 +300,8 @@ const IPTV_CONFIG = {
             year: "2026",
             quality: "4K FHD",
             badge: "INFANTIL",
-            image: "https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg"
+            image: "https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+            trailerId: "qQlr9-rF32A"
         }
     ],
 

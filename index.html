@@ -604,6 +604,36 @@
         </div>
     </div>
 
+    <!-- ==========================================================================
+         13. MODAL DE REPRODUCTOR DE TRÁILER CINEMATOGRÁFICO
+         ========================================================================== -->
+    <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog">
+        <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoModalClose" aria-label="Cerrar tráiler">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="video-modal-header">
+                <div>
+                    <h3 class="video-modal-title" id="videoModalTitle">Tráiler Oficial</h3>
+                    <div class="video-modal-meta" id="videoModalMeta">4K Ultra HD • Audio Latino 5.1</div>
+                </div>
+                <span class="video-modal-badge" id="videoModalBadge">ESTRENO 2026</span>
+            </div>
+            <div class="video-responsive-wrapper">
+                <iframe id="videoIframe" src="" title="Reproductor de Tráiler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="video-modal-footer">
+                <div class="video-modal-info" id="videoModalInfo">
+                    <i class="fas fa-check-circle" style="color: #34d399;"></i> Disponible completa en <strong>MEGATV+</strong>
+                </div>
+                <a href="https://wa.me/573013217824?text=Hola!%20Acabo%20de%20ver%20el%20tr%C3%A1iler%20en%20la%20web%20y%20quiero%20mi%20Demo%20Gratis%20de%204%20Horas." id="videoModalCta" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fab fa-whatsapp"></i> Ver Completa con Demo Gratis
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts de la Aplicación -->
     <script src="js/config.js"></script>
     <script src="js/chatbot.js"></script>

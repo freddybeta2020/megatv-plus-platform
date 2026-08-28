@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
     initBrandData();
     initVodCatalog();
+    initTrailerModal();
     initPricingTable();
     initDevicesTabs();
     initFaqAccordion();
@@ -365,9 +366,6 @@ function renderVodCatalog(filterCategory = "all") {
         const card = document.createElement("div");
         card.className = "vod-card";
 
-        const waMsg = `Hola! Quiero probar el servicio de MEGATV+ para ver la película/serie *${item.title}* (${item.platform}). ¿Tienen demo gratis disponible?`;
-        const waLink = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
-
         card.innerHTML = `
             <span class="vod-badge">${item.badge}</span>
             <span class="vod-rating"><i class="fas fa-star"></i> ${item.rating}</span>
@@ -377,15 +375,83 @@ function renderVodCatalog(filterCategory = "all") {
                 <h4 class="vod-title" title="${item.title}">${item.title}</h4>
                 <div class="vod-genre">
                     <span>${item.genre}</span>
-                    <span class="vod-quality-tag">${item.quality}</span>
+                    <span class="vod-quality-tag"><i class="fas fa-play" style="font-size: 0.55rem; margin-right: 2px;"></i> Tráiler</span>
                 </div>
             </div>
         `;
 
+        // Al hacer clic abre el reproductor modal de tráiler oficial
         card.addEventListener("click", () => {
-            window.open(waLink, "_blank");
+            openTrailerModal(item);
         });
 
         container.appendChild(card);
     });
+}
+
+/**
+ * 10. CONTROL DEL MODAL DE REPRODUCTOR DE TRÁILER CINEMATOGRÁFICO
+ */
+function initTrailerModal() {
+    const modal = document.getElementById("videoModal");
+    const closeBtn = document.getElementById("videoModalClose");
+    const backdrop = document.getElementById("videoModalBackdrop");
+
+    if (!modal) return;
+
+    // Cerrar al hacer clic en botón de cerrar
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeTrailerModal);
+    }
+
+    // Cerrar al hacer clic fuera del video (en el backdrop)
+    if (backdrop) {
+        backdrop.addEventListener("click", closeTrailerModal);
+    }
+
+    // Cerrar con tecla Escape
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("open")) {
+            closeTrailerModal();
+        }
+    });
+}
+
+function openTrailerModal(item) {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoIframe");
+    const titleEl = document.getElementById("videoModalTitle");
+    const metaEl = document.getElementById("videoModalMeta");
+    const badgeEl = document.getElementById("videoModalBadge");
+    const ctaBtn = document.getElementById("videoModalCta");
+
+    if (!modal || !iframe || !item) return;
+
+    const waPhone = window.IPTV_CONFIG ? window.IPTV_CONFIG.whatsapp.phoneNumber : "573013217824";
+
+    titleEl.textContent = `Tráiler Oficial: ${item.title}`;
+    metaEl.textContent = `${item.platform} • ${item.genre} • ${item.quality}`;
+    badgeEl.textContent = `${item.badge} (${item.year})`;
+
+    const waMsg = `Hola! Acabo de ver el tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 4 Horas para probar el servicio.`;
+    ctaBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
+
+    // Cargar tráiler de YouTube con autoplay seguro
+    iframe.src = `https://www.youtube-nocookie.com/embed/${item.trailerId}?autoplay=1&rel=0&modestbranding=1`;
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // Evita scroll de fondo
+}
+
+function closeTrailerModal() {
+    const modal = document.getElementById("videoModal");
+    const iframe = document.getElementById("videoIframe");
+
+    if (!modal || !iframe) return;
+
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    iframe.src = ""; // Detiene inmediatamente la reproducción del video
+    document.body.style.overflow = ""; // Restaura el scroll de la página
 }
