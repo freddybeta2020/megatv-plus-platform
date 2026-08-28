@@ -390,12 +390,13 @@ function renderVodCatalog(filterCategory = "all") {
 }
 
 /**
- * 10. CONTROL DEL MODAL DE REPRODUCTOR DE TRÁILER CINEMATOGRÁFICO
+ * 10. CONTROL DEL MODAL DE DETALLES CINEMATOGRÁFICO & TRÁILER (ESTILO NETFLIX)
  */
 function initTrailerModal() {
     const modal = document.getElementById("videoModal");
     const closeBtn = document.getElementById("videoModalClose");
     const backdrop = document.getElementById("videoModalBackdrop");
+    const plansBtn = document.getElementById("videoModalPlansBtn");
 
     if (!modal) return;
 
@@ -407,6 +408,13 @@ function initTrailerModal() {
     // Cerrar al hacer clic fuera del video (en el backdrop)
     if (backdrop) {
         backdrop.addEventListener("click", closeTrailerModal);
+    }
+
+    // Botón "Ver Planes y Precios" -> Cierra el modal y va a #planes
+    if (plansBtn) {
+        plansBtn.addEventListener("click", () => {
+            closeTrailerModal();
+        });
     }
 
     // Cerrar con tecla Escape
@@ -423,20 +431,35 @@ function openTrailerModal(item) {
     const titleEl = document.getElementById("videoModalTitle");
     const metaEl = document.getElementById("videoModalMeta");
     const badgeEl = document.getElementById("videoModalBadge");
+    const ratingEl = document.getElementById("videoModalRating");
+    const ageEl = document.getElementById("videoModalAge");
+    const qualityEl = document.getElementById("videoModalQuality");
+    const synopsisEl = document.getElementById("videoModalSynopsis");
+    const castEl = document.getElementById("videoModalCast");
+    const audioEl = document.getElementById("videoModalAudio");
+    const availEl = document.getElementById("videoModalAvailability");
     const ctaBtn = document.getElementById("videoModalCta");
 
     if (!modal || !iframe || !item) return;
 
     const waPhone = window.IPTV_CONFIG ? window.IPTV_CONFIG.whatsapp.phoneNumber : "573013217824";
 
-    titleEl.textContent = `Tráiler Oficial: ${item.title}`;
-    metaEl.textContent = `${item.platform} • ${item.genre} • ${item.quality}`;
-    badgeEl.textContent = `${item.badge} (${item.year})`;
+    // Inyectar datos completos estilo Netflix / Apple TV
+    titleEl.textContent = item.title;
+    metaEl.textContent = `${item.platform} • ${item.genre} • ${item.duration} • Estreno ${item.year}`;
+    badgeEl.textContent = item.badge;
+    ratingEl.innerHTML = `<i class="fas fa-star"></i> ${item.rating}`;
+    ageEl.textContent = item.contentRating || "+14";
+    qualityEl.textContent = item.quality;
+    synopsisEl.textContent = item.synopsis;
+    castEl.textContent = item.cast;
+    audioEl.textContent = item.audio;
+    availEl.textContent = `MEGATV+ (Disponible en Vivo y On Demand en todos los planes)`;
 
-    const waMsg = `Hola! Acabo de ver el tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 4 Horas para probar el servicio.`;
+    const waMsg = `Hola! Estuve viendo la ficha y tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 4 Horas para probar la calidad 4K.`;
     ctaBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
 
-    // Cargar tráiler de YouTube con autoplay seguro
+    // Cargar tráiler de YouTube en alta definición
     iframe.src = `https://www.youtube-nocookie.com/embed/${item.trailerId}?autoplay=1&rel=0&modestbranding=1`;
 
     modal.classList.add("open");

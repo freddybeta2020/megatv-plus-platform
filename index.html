@@ -605,30 +605,61 @@
     </div>
 
     <!-- ==========================================================================
-         13. MODAL DE REPRODUCTOR DE TRÁILER CINEMATOGRÁFICO
+         13. MODAL DE DETALLES CINEMATOGRÁFICO & TRÁILER (ESTILO NETFLIX)
          ========================================================================== -->
     <div class="video-modal" id="videoModal" aria-hidden="true" role="dialog">
         <div class="video-modal-backdrop" id="videoModalBackdrop"></div>
         <div class="video-modal-content">
-            <button class="video-modal-close" id="videoModalClose" aria-label="Cerrar tráiler">
+            <button class="video-modal-close" id="videoModalClose" aria-label="Cerrar ventana">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="video-modal-header">
-                <div>
-                    <h3 class="video-modal-title" id="videoModalTitle">Tráiler Oficial</h3>
-                    <div class="video-modal-meta" id="videoModalMeta">4K Ultra HD • Audio Latino 5.1</div>
-                </div>
-                <span class="video-modal-badge" id="videoModalBadge">ESTRENO 2026</span>
-            </div>
+            
+            <!-- Reproductor de Tráiler en Alta Definición -->
             <div class="video-responsive-wrapper">
                 <iframe id="videoIframe" src="" title="Reproductor de Tráiler" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <div class="video-modal-footer">
-                <div class="video-modal-info" id="videoModalInfo">
-                    <i class="fas fa-check-circle" style="color: #34d399;"></i> Disponible completa en <strong>MEGATV+</strong>
+
+            <!-- Información Detallada, Sinopsis y Ficha Técnica -->
+            <div class="video-modal-body">
+                <div class="video-modal-header-info">
+                    <div class="video-modal-badges">
+                        <span class="video-badge-accent" id="videoModalBadge">ESTRENO</span>
+                        <span class="video-badge-rating" id="videoModalRating"><i class="fas fa-star"></i> 8.5</span>
+                        <span class="video-badge-outline" id="videoModalAge">+16</span>
+                        <span class="video-badge-outline" id="videoModalQuality">4K Ultra HD</span>
+                    </div>
+                    <h3 class="video-modal-title" id="videoModalTitle">Título de la Película</h3>
+                    <div class="video-modal-meta" id="videoModalMeta">Plataforma • Género • Duración • Año</div>
                 </div>
-                <a href="https://wa.me/573013217824?text=Hola!%20Acabo%20de%20ver%20el%20tr%C3%A1iler%20en%20la%20web%20y%20quiero%20mi%20Demo%20Gratis%20de%204%20Horas." id="videoModalCta" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
-                    <i class="fab fa-whatsapp"></i> Ver Completa con Demo Gratis
+
+                <div class="video-modal-synopsis-box">
+                    <h4 class="video-synopsis-label"><i class="fas fa-align-left"></i> Sinopsis Oficial</h4>
+                    <p class="video-modal-synopsis" id="videoModalSynopsis">Cargando sinopsis de la película...</p>
+                </div>
+
+                <div class="video-modal-details-grid">
+                    <div class="video-detail-item">
+                        <span class="video-detail-label"><i class="fas fa-users"></i> Reparto Principal:</span>
+                        <span class="video-detail-value" id="videoModalCast">Actores principales</span>
+                    </div>
+                    <div class="video-detail-item">
+                        <span class="video-detail-label"><i class="fas fa-volume-up"></i> Audio y Doblaje:</span>
+                        <span class="video-detail-value" id="videoModalAudio">Español Latino (Dolby 5.1)</span>
+                    </div>
+                    <div class="video-detail-item">
+                        <span class="video-detail-label"><i class="fas fa-tv"></i> Disponible en:</span>
+                        <span class="video-detail-value" id="videoModalAvailability">MEGATV+ (Incluido en todos los planes)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pie con Llamados a la Acción -->
+            <div class="video-modal-footer">
+                <a href="#planes" id="videoModalPlansBtn" class="btn btn-secondary btn-sm">
+                    <i class="fas fa-gem"></i> Ver Planes y Precios
+                </a>
+                <a href="https://wa.me/573013217824" id="videoModalCta" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                    <i class="fab fa-whatsapp"></i> Solicitar Demo Gratis (4 Horas)
                 </a>
             </div>
         </div>
