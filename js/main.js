@@ -459,8 +459,8 @@ function openTrailerModal(item) {
     const waMsg = `Hola! Estuve viendo la ficha y tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 4 Horas para probar la calidad 4K.`;
     ctaBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
 
-    // Cargar tráiler de YouTube en alta definición
-    iframe.src = `https://www.youtube-nocookie.com/embed/${item.trailerId}?autoplay=1&rel=0&modestbranding=1`;
+    // Cargar tráiler de YouTube en alta definición con compatibilidad total
+    iframe.src = `https://www.youtube.com/embed/${item.trailerId}?autoplay=1&rel=0&modestbranding=1&enablejsapi=1`;
 
     modal.classList.add("open");
     modal.setAttribute("aria-hidden", "false");

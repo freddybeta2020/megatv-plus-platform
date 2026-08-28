@@ -1783,26 +1783,27 @@ textarea.form-control {
     position: absolute;
     top: 12px;
     right: 12px;
-    background: rgba(3, 7, 18, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    border: 2px solid #ffffff;
     color: #ffffff;
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    font-weight: 800;
     transition: all var(--transition-fast);
-    z-index: 10;
-    backdrop-filter: blur(8px);
+    z-index: 100;
+    box-shadow: 0 4px 18px rgba(239, 68, 68, 0.7);
 }
 
 .video-modal-close:hover {
-    background: var(--accent);
-    border-color: var(--accent);
-    transform: rotate(90deg);
+    background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 24px rgba(239, 68, 68, 0.9);
 }
 
 .video-responsive-wrapper {

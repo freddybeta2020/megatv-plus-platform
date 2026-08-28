@@ -276,7 +276,7 @@ const IPTV_CONFIG = {
             synopsis: "En un mundo donde los superhéroes abrazan el lado oscuro de su fama masiva, un grupo de justicieros rebeldes conocidos como 'The Boys' se propone derribar a los corruptos 'Siete' y a la corporación multinacional Vought.",
             badge: "TENDENCIA",
             image: "https://image.tmdb.org/t/p/w500/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
-            trailerId: "EzFXDvC-2uY"
+            trailerId: "K8g_ijN3R2w"
         },
         {
             title: "Stranger Things",
@@ -330,7 +330,7 @@ const IPTV_CONFIG = {
             synopsis: "Carmy, un prodigioso chef de alta cocina, regresa a Chicago para hacerse cargo de la tienda de sándwiches de carne italiana de su familia, luchando por transformar el negocio y lidiar con su apasionado equipo de cocina.",
             badge: "PREMIADA",
             image: "https://image.tmdb.org/t/p/w500/eKfVzzEazSIjJMrw9ADa2x8ksLz.jpg",
-            trailerId: "gBmkI4hnxxI"
+            trailerId: "i5U-w1yL4r0"
         },
         {
             title: "Godzilla x Kong",
