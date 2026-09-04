@@ -326,10 +326,10 @@ function updateYear() {
 /**
  * 9. CATÁLOGO Y CARRUSEL VOD DE PELÍCULAS Y SERIES (ARRASTRE LIBRE Y AUTO-SCROLL)
  */
-let isVodDragging = false;
-let vodStartX = 0;
-let vodScrollLeft = 0;
-let vodHasMoved = false;
+let isVodMouseDown = false;
+let vodMouseDownX = 0;
+let vodStartScrollLeft = 0;
+let vodJustDragged = false;
 let vodIsHovered = false;
 let vodAutoScrollAnimId = null;
 
@@ -363,8 +363,8 @@ function renderVodCatalog(filterCategory = "all") {
         filteredItems = items.filter(item => item.category === filterCategory);
     }
 
-    // Duplicamos varias veces para garantizar desplazamiento infinito y fluido
-    let displayList = [...filteredItems, ...filteredItems, ...filteredItems];
+    // Duplicamos 4 veces para tener un buffer infinito perfecto hacia la izquierda y derecha
+    let displayList = [...filteredItems, ...filteredItems, ...filteredItems, ...filteredItems];
 
     container.innerHTML = "";
 
@@ -386,10 +386,11 @@ function renderVodCatalog(filterCategory = "all") {
             </div>
         `;
 
-        // Al hacer clic abre el reproductor modal (SOLO si no estaba arrastrando)
+        // Al hacer clic abre el reproductor modal (SOLO si no fue un arrastre de más de 5px)
         card.addEventListener("click", (e) => {
-            if (vodHasMoved) {
+            if (vodJustDragged) {
                 e.preventDefault();
+                e.stopPropagation();
                 return;
             }
             openTrailerModal(item);
@@ -399,12 +400,12 @@ function renderVodCatalog(filterCategory = "all") {
     });
 
     if (wrapper) {
-        // Posicionar en el primer tercio para permitir desplazamiento bidireccional inmediato
-        setTimeout(() => {
-            if (wrapper.scrollLeft === 0 && wrapper.scrollWidth > wrapper.clientWidth) {
-                wrapper.scrollLeft = 50;
+        // Centrar en el medio para permitir desplazamiento inmediato a la izquierda y derecha
+        requestAnimationFrame(() => {
+            if (wrapper.scrollWidth > wrapper.clientWidth) {
+                wrapper.scrollLeft = (wrapper.scrollWidth - wrapper.clientWidth) / 2;
             }
-        }, 100);
+        });
     }
 }
 
@@ -412,64 +413,97 @@ function setupVodCarouselInteractivity() {
     const wrapper = document.getElementById("vodMarqueeWrapper");
     if (!wrapper) return;
 
-    // 1. Mouse Drag (Arrastre libre con ratón hacia ambos lados)
+    // 1. Mouse Drag Bidireccional hacia la izquierda y derecha
     wrapper.addEventListener("mousedown", (e) => {
-        isVodDragging = true;
-        vodHasMoved = false;
-        vodStartX = e.pageX - wrapper.offsetLeft;
-        vodScrollLeft = wrapper.scrollLeft;
-        wrapper.classList.add("is-dragging");
+        isVodMouseDown = true;
+        vodJustDragged = false;
+        vodMouseDownX = e.pageX;
+        vodStartScrollLeft = wrapper.scrollLeft;
     });
 
     window.addEventListener("mousemove", (e) => {
-        if (!isVodDragging) return;
-        e.preventDefault();
-        const x = e.pageX - wrapper.offsetLeft;
-        const walk = (x - vodStartX) * 1.5; // Multiplicador de velocidad de arrastre
-        if (Math.abs(walk) > 5) {
-            vodHasMoved = true;
+        if (!isVodMouseDown) return;
+        const deltaX = e.pageX - vodMouseDownX;
+        
+        if (Math.abs(deltaX) > 5) {
+            vodJustDragged = true;
+            wrapper.classList.add("is-dragging");
+            // Multiplicador de velocidad ágil y reactivo (2.2x)
+            wrapper.scrollLeft = vodStartScrollLeft - (deltaX * 2.2);
+
+            checkInfiniteWrap(wrapper);
         }
-        wrapper.scrollLeft = vodScrollLeft - walk;
     });
 
     window.addEventListener("mouseup", () => {
-        if (isVodDragging) {
-            isVodDragging = false;
+        if (isVodMouseDown) {
+            isVodMouseDown = false;
             wrapper.classList.remove("is-dragging");
-            setTimeout(() => { vodHasMoved = false; }, 60);
+            if (vodJustDragged) {
+                setTimeout(() => {
+                    vodJustDragged = false;
+                }, 100);
+            }
         }
     });
 
-    // 2. Detección de Hover (Pausa suave al pasar el ratón)
+    // 2. Detección de Hover (Pausa al pasar el cursor)
     wrapper.addEventListener("mouseenter", () => {
         vodIsHovered = true;
     });
 
     wrapper.addEventListener("mouseleave", () => {
         vodIsHovered = false;
-        isVodDragging = false;
+        isVodMouseDown = false;
         wrapper.classList.remove("is-dragging");
     });
 
-    // 3. Soporte para Rueda del Mouse (Wheel horizontal)
+    // 3. Soporte para Rueda del Mouse (Wheel horizontal más rápido)
     wrapper.addEventListener("wheel", (e) => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        if (Math.abs(e.deltaY) > 5) {
             e.preventDefault();
-            wrapper.scrollLeft += e.deltaY * 0.95;
+            wrapper.scrollLeft += e.deltaY * 1.5; // Mayor velocidad con rueda
+            checkInfiniteWrap(wrapper);
         }
     }, { passive: false });
 
-    // 4. Motor de Auto-Scroll Continuo y Fluido
-    function autoScrollLoop() {
-        if (!vodIsHovered && !isVodDragging) {
-            wrapper.scrollLeft += 1.35; // Velocidad dinámica normal / ágil
+    // 4. Touch support para móviles
+    let touchStartX = 0;
+    wrapper.addEventListener("touchstart", (e) => {
+        vodIsHovered = true;
+        touchStartX = e.touches[0].pageX;
+    }, { passive: true });
 
-            // Reinicio suave de bucle infinito
-            if (wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 10)) {
-                wrapper.scrollLeft = 20;
-            }
+    wrapper.addEventListener("touchmove", (e) => {
+        const delta = e.touches[0].pageX - touchStartX;
+        if (Math.abs(delta) > 5) {
+            vodJustDragged = true;
+        }
+    }, { passive: true });
+
+    wrapper.addEventListener("touchend", () => {
+        setTimeout(() => {
+            vodIsHovered = false;
+            vodJustDragged = false;
+        }, 120);
+    });
+
+    // 5. Motor de Auto-Scroll Continuo y Fluido
+    function autoScrollLoop() {
+        if (!vodIsHovered && !isVodMouseDown) {
+            wrapper.scrollLeft += 1.4; // Velocidad continua agradable y ágil
+            checkInfiniteWrap(wrapper);
         }
         vodAutoScrollAnimId = requestAnimationFrame(autoScrollLoop);
+    }
+
+    function checkInfiniteWrap(el) {
+        const oneSetWidth = el.scrollWidth / 4;
+        if (el.scrollLeft >= oneSetWidth * 2.5) {
+            el.scrollLeft -= oneSetWidth;
+        } else if (el.scrollLeft <= oneSetWidth * 0.5) {
+            el.scrollLeft += oneSetWidth;
+        }
     }
 
     if (vodAutoScrollAnimId) cancelAnimationFrame(vodAutoScrollAnimId);

@@ -832,10 +832,6 @@ body[data-theme="slate"] .feature-card:hover {
     scroll-behavior: auto;
 }
 
-.vod-marquee-container.is-dragging .vod-card {
-    pointer-events: none;
-}
-
 .vod-marquee-track {
     display: flex;
     gap: 1.5rem;
