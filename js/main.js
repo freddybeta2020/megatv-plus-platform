@@ -324,8 +324,15 @@ function updateYear() {
 }
 
 /**
- * 9. CATÁLOGO Y CARRUSEL VOD DE PELÍCULAS Y SERIES
+ * 9. CATÁLOGO Y CARRUSEL VOD DE PELÍCULAS Y SERIES (ARRASTRE LIBRE Y AUTO-SCROLL)
  */
+let isVodDragging = false;
+let vodStartX = 0;
+let vodScrollLeft = 0;
+let vodHasMoved = false;
+let vodIsHovered = false;
+let vodAutoScrollAnimId = null;
+
 function initVodCatalog() {
     const filterContainer = document.getElementById("vodFilterTabs");
     if (!filterContainer || !window.IPTV_CONFIG || !window.IPTV_CONFIG.vodCatalog) return;
@@ -341,25 +348,23 @@ function initVodCatalog() {
     });
 
     renderVodCatalog("all");
+    setupVodCarouselInteractivity();
 }
 
 function renderVodCatalog(filterCategory = "all") {
     const container = document.getElementById("vodCardsContainer");
+    const wrapper = document.getElementById("vodMarqueeWrapper");
     if (!container || !window.IPTV_CONFIG || !window.IPTV_CONFIG.vodCatalog) return;
 
     const items = window.IPTV_CONFIG.vodCatalog;
-    const waPhone = window.IPTV_CONFIG.whatsapp.phoneNumber;
 
     let filteredItems = items;
     if (filterCategory !== "all") {
         filteredItems = items.filter(item => item.category === filterCategory);
     }
 
-    // Si hay pocos elementos, los duplicamos para asegurar un bucle de animación suave continuo
-    let displayList = [...filteredItems, ...filteredItems];
-    if (displayList.length < 10) {
-        displayList = [...displayList, ...displayList];
-    }
+    // Duplicamos varias veces para garantizar desplazamiento infinito y fluido
+    let displayList = [...filteredItems, ...filteredItems, ...filteredItems];
 
     container.innerHTML = "";
 
@@ -370,7 +375,7 @@ function renderVodCatalog(filterCategory = "all") {
         card.innerHTML = `
             <span class="vod-badge">${item.badge}</span>
             <span class="vod-rating"><i class="fas fa-star"></i> ${item.rating}</span>
-            <img src="${item.image}" alt="${item.title}" class="vod-card-img" loading="lazy">
+            <img src="${item.image}" alt="${item.title}" class="vod-card-img" loading="lazy" draggable="false">
             <div class="vod-card-overlay">
                 <div class="vod-platform">${item.platform} • ${item.year}</div>
                 <h4 class="vod-title" title="${item.title}">${item.title}</h4>
@@ -381,13 +386,94 @@ function renderVodCatalog(filterCategory = "all") {
             </div>
         `;
 
-        // Al hacer clic abre el reproductor modal de tráiler oficial
-        card.addEventListener("click", () => {
+        // Al hacer clic abre el reproductor modal (SOLO si no estaba arrastrando)
+        card.addEventListener("click", (e) => {
+            if (vodHasMoved) {
+                e.preventDefault();
+                return;
+            }
             openTrailerModal(item);
         });
 
         container.appendChild(card);
     });
+
+    if (wrapper) {
+        // Posicionar en el primer tercio para permitir desplazamiento bidireccional inmediato
+        setTimeout(() => {
+            if (wrapper.scrollLeft === 0 && wrapper.scrollWidth > wrapper.clientWidth) {
+                wrapper.scrollLeft = 50;
+            }
+        }, 100);
+    }
+}
+
+function setupVodCarouselInteractivity() {
+    const wrapper = document.getElementById("vodMarqueeWrapper");
+    if (!wrapper) return;
+
+    // 1. Mouse Drag (Arrastre libre con ratón hacia ambos lados)
+    wrapper.addEventListener("mousedown", (e) => {
+        isVodDragging = true;
+        vodHasMoved = false;
+        vodStartX = e.pageX - wrapper.offsetLeft;
+        vodScrollLeft = wrapper.scrollLeft;
+        wrapper.classList.add("is-dragging");
+    });
+
+    window.addEventListener("mousemove", (e) => {
+        if (!isVodDragging) return;
+        e.preventDefault();
+        const x = e.pageX - wrapper.offsetLeft;
+        const walk = (x - vodStartX) * 1.5; // Multiplicador de velocidad de arrastre
+        if (Math.abs(walk) > 5) {
+            vodHasMoved = true;
+        }
+        wrapper.scrollLeft = vodScrollLeft - walk;
+    });
+
+    window.addEventListener("mouseup", () => {
+        if (isVodDragging) {
+            isVodDragging = false;
+            wrapper.classList.remove("is-dragging");
+            setTimeout(() => { vodHasMoved = false; }, 60);
+        }
+    });
+
+    // 2. Detección de Hover (Pausa suave al pasar el ratón)
+    wrapper.addEventListener("mouseenter", () => {
+        vodIsHovered = true;
+    });
+
+    wrapper.addEventListener("mouseleave", () => {
+        vodIsHovered = false;
+        isVodDragging = false;
+        wrapper.classList.remove("is-dragging");
+    });
+
+    // 3. Soporte para Rueda del Mouse (Wheel horizontal)
+    wrapper.addEventListener("wheel", (e) => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            wrapper.scrollLeft += e.deltaY * 0.95;
+        }
+    }, { passive: false });
+
+    // 4. Motor de Auto-Scroll Continuo y Fluido
+    function autoScrollLoop() {
+        if (!vodIsHovered && !isVodDragging) {
+            wrapper.scrollLeft += 1.35; // Velocidad dinámica normal / ágil
+
+            // Reinicio suave de bucle infinito
+            if (wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 10)) {
+                wrapper.scrollLeft = 20;
+            }
+        }
+        vodAutoScrollAnimId = requestAnimationFrame(autoScrollLoop);
+    }
+
+    if (vodAutoScrollAnimId) cancelAnimationFrame(vodAutoScrollAnimId);
+    vodAutoScrollAnimId = requestAnimationFrame(autoScrollLoop);
 }
 
 /**
