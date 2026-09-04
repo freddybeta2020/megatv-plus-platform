@@ -4,6 +4,7 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+    initThemeSwitcher();
     initNavbar();
     initBrandData();
     initVodCatalog();
@@ -477,4 +478,40 @@ function closeTrailerModal() {
     modal.setAttribute("aria-hidden", "true");
     iframe.src = ""; // Detiene inmediatamente la reproducción del video
     document.body.style.overflow = ""; // Restaura el scroll de la página
+}
+
+/**
+ * 11. SELECTOR INTERACTIVO DE MODO DUAL / CONFORT VISUAL
+ */
+function initThemeSwitcher() {
+    const themeBtn = document.getElementById("themeSwitchBtn");
+    const themeIcon = document.getElementById("themeSwitchIcon");
+    const themeText = document.getElementById("themeSwitchText");
+
+    // Leer tema guardado en localStorage o usar 'oled' por defecto
+    const savedTheme = localStorage.getItem("megatv_theme") || "oled";
+    applyTheme(savedTheme);
+
+    if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+            const currentTheme = document.body.getAttribute("data-theme") === "slate" ? "slate" : "oled";
+            const newTheme = currentTheme === "oled" ? "slate" : "oled";
+            applyTheme(newTheme);
+            localStorage.setItem("megatv_theme", newTheme);
+        });
+    }
+
+    function applyTheme(theme) {
+        if (theme === "slate") {
+            document.body.setAttribute("data-theme", "slate");
+            if (themeIcon) themeIcon.textContent = "🍏";
+            if (themeText) themeText.textContent = "Slate Suave";
+            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Cinema OLED (Descanso Total)");
+        } else {
+            document.body.removeAttribute("data-theme");
+            if (themeIcon) themeIcon.textContent = "🍿";
+            if (themeText) themeText.textContent = "Cine OLED";
+            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Titanium Slate (Grafito Suave)");
+        }
+    }
 }

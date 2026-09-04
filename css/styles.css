@@ -4,14 +4,16 @@
    ========================================================================== */
 
 :root {
-    /* Paleta Cinema Dark Obsidian (Diseño de Alto Impacto y Máximo Confort Visual) */
-    --bg-main: #07090e;
-    --bg-secondary: #0d111a;
-    --bg-card: #131722;
-    --bg-card-hover: #192030;
-    --bg-glass: rgba(19, 23, 34, 0.88);
+    /* ==========================================================================
+       MODO 1: CINEMA OLED MATTE (Por defecto - Máximo Descanso Visual y Cero Fatiga)
+       ========================================================================== */
+    --bg-main: #0a0b0f;
+    --bg-secondary: #0f1017;
+    --bg-card: #13141a;
+    --bg-card-hover: #191b24;
+    --bg-glass: rgba(19, 20, 26, 0.92);
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-glow: rgba(59, 130, 246, 0.35);
+    --border-glow: rgba(249, 115, 22, 0.35);
 
     /* Acentos y Botones */
     --primary: #2563eb;
@@ -34,15 +36,15 @@
     --live-pulse: rgba(16, 185, 129, 0.4);
 
     /* Tipografía y Textos */
-    --text-main: #f8fafc;
+    --text-main: #f1f5f9;
     --text-muted: #94a3b8;
     --text-dim: #64748b;
     --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     /* Sombras y Radios */
-    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.5);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 35px -10px rgba(0, 0, 0, 0.7);
     --radius-sm: 8px;
     --radius-md: 14px;
     --radius-lg: 20px;
@@ -50,6 +52,19 @@
 
     --transition-fast: 0.2s ease;
     --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ==========================================================================
+   MODO 2: TITANIUM SLATE PROFUNDO (Tono Grafito Aterciopelado)
+   ========================================================================== */
+body[data-theme="slate"] {
+    --bg-main: #12141a;
+    --bg-secondary: #171a22;
+    --bg-card: #1a1d26;
+    --bg-card-hover: #222632;
+    --bg-glass: rgba(26, 29, 38, 0.92);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --border-glow: rgba(56, 189, 248, 0.3);
 }
 
 /* Reset Global Estricto Anti-Desbordamiento */
@@ -76,11 +91,7 @@ body {
     max-width: 100vw;
     overflow-x: hidden !important;
     position: relative;
-    background-image: 
-        radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 85% 65%, rgba(249, 115, 22, 0.08) 0%, transparent 45%),
-        radial-gradient(circle at 50% 90%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
-    background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
@@ -313,16 +324,49 @@ section {
 .nav-actions {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.65rem;
 }
 
-.nav-toggle {
-    display: none;
-    background: transparent;
+.theme-switch-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid var(--border-color);
     color: var(--text-main);
-    font-size: 1.4rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: var(--radius-full);
+    font-size: 0.78rem;
+    font-weight: 700;
     cursor: pointer;
-    padding: 0.3rem;
+    transition: all var(--transition-fast);
+    backdrop-filter: blur(8px);
+    user-select: none;
+}
+
+.theme-switch-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.theme-switch-icon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.theme-switch-text {
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .theme-switch-text {
+        display: none;
+    }
+    .theme-switch-btn {
+        padding: 0.45rem 0.6rem;
+    }
 }
 
 /* ==========================================================================
