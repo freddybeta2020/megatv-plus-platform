@@ -4,27 +4,27 @@
    ========================================================================== */
 
 :root {
-    /* Colores Principales */
-    --bg-main: #060913;
-    --bg-secondary: #0b1120;
-    --bg-card: #111a2e;
-    --bg-card-hover: #17233d;
-    --bg-glass: rgba(17, 26, 46, 0.85);
+    /* Paleta Cinema Dark Obsidian (Diseño de Alto Impacto y Máximo Confort Visual) */
+    --bg-main: #07090e;
+    --bg-secondary: #0d111a;
+    --bg-card: #131722;
+    --bg-card-hover: #192030;
+    --bg-glass: rgba(19, 23, 34, 0.88);
     --border-color: rgba(255, 255, 255, 0.08);
-    --border-glow: rgba(37, 99, 235, 0.3);
+    --border-glow: rgba(59, 130, 246, 0.35);
 
     /* Acentos y Botones */
     --primary: #2563eb;
     --primary-light: #3b82f6;
     --primary-hover: #1d4ed8;
-    --primary-glow: rgba(37, 99, 235, 0.4);
+    --primary-glow: rgba(37, 99, 235, 0.35);
 
     --accent: #f97316;
     --accent-hover: #ea580c;
-    --accent-glow: rgba(249, 115, 22, 0.45);
+    --accent-glow: rgba(249, 115, 22, 0.4);
 
-    --cyan: #06b6d4;
-    --cyan-glow: rgba(6, 182, 212, 0.3);
+    --cyan: #38bdf8;
+    --cyan-glow: rgba(56, 189, 248, 0.3);
 
     --whatsapp: #25d366;
     --whatsapp-hover: #128c7e;
@@ -545,61 +545,134 @@ section {
    ========================================================================== */
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
     width: 100%;
     min-width: 0;
 }
 
 .feature-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background: linear-gradient(145deg, rgba(19, 23, 34, 0.75) 0%, rgba(13, 17, 26, 0.85) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
-    padding: 1.75rem;
+    padding: 2rem 1.75rem;
     transition: all var(--transition-normal);
     min-width: 0;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: transparent;
+    transition: all var(--transition-normal);
 }
 
 .feature-card:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-glow);
-    box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.2);
-    background: var(--bg-card-hover);
+    transform: translateY(-6px);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.6);
+    background: linear-gradient(145deg, rgba(25, 32, 48, 0.9) 0%, rgba(16, 21, 32, 0.95) 100%);
 }
 
 .feature-icon-box {
-    width: 50px;
-    height: 50px;
-    background: rgba(37, 99, 235, 0.15);
-    border: 1px solid rgba(37, 99, 235, 0.3);
-    border-radius: var(--radius-md);
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
-    color: var(--cyan);
-    margin-bottom: 1.1rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 1.35rem;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.feature-card:hover .feature-icon-box {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* 1. Anti-Freeze (Fuego / Velocidad / Rayo) */
+.feature-freeze .feature-icon-box {
+    background: linear-gradient(135deg, #f97316 0%, #ef4444 100%);
+    box-shadow: 0 8px 22px rgba(249, 115, 22, 0.45);
+}
+.feature-freeze:hover::before {
+    background: linear-gradient(90deg, #f97316, #ef4444);
+}
+
+/* 2. Deportes (Oro / Trofeo) */
+.feature-sports .feature-icon-box {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 8px 22px rgba(16, 185, 129, 0.45);
+}
+.feature-sports:hover::before {
+    background: linear-gradient(90deg, #10b981, #059669);
+}
+
+/* 3. Catálogo VOD (Cine / Púrpura Neón) */
+.feature-vod .feature-icon-box {
+    background: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+    box-shadow: 0 8px 22px rgba(139, 92, 246, 0.45);
+}
+.feature-vod:hover::before {
+    background: linear-gradient(90deg, #8b5cf6, #6366f1);
+}
+
+/* 4. Guía EPG (Cian / Televisor) */
+.feature-epg .feature-icon-box {
+    background: linear-gradient(135deg, #06b6d4 0%, #0284c7 100%);
+    box-shadow: 0 8px 22px rgba(6, 182, 212, 0.45);
+}
+.feature-epg:hover::before {
+    background: linear-gradient(90deg, #06b6d4, #0284c7);
+}
+
+/* 5. Sin Contratos (Rosa Neón / Libertad) */
+.feature-nocontract .feature-icon-box {
+    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+    box-shadow: 0 8px 22px rgba(236, 72, 153, 0.45);
+}
+.feature-nocontract:hover::before {
+    background: linear-gradient(90deg, #ec4899, #f43f5e);
+}
+
+/* 6. Asistencia IA (Azul Inteligente / Robot) */
+.feature-ai .feature-icon-box {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 8px 22px rgba(59, 130, 246, 0.45);
+}
+.feature-ai:hover::before {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
 }
 
 .feature-title {
-    font-size: 1.15rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 0.55rem;
     color: var(--text-main);
+    line-height: 1.25;
 }
 
 .feature-desc {
     color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.6;
 }
 
 /* ==========================================================================
    CATÁLOGO VOD & CARRUSEL DE PELÍCULAS Y SERIES (100% RESPONSIVE)
    ========================================================================== */
 .vod-section {
-    background: linear-gradient(180deg, var(--bg-main) 0%, #080e1e 50%, var(--bg-main) 100%);
+    background: linear-gradient(180deg, var(--bg-main) 0%, #0d121c 50%, var(--bg-main) 100%);
     padding: 4.5rem 0 3rem 0;
     overflow: hidden;
     position: relative;
@@ -997,7 +1070,7 @@ section {
 }
 
 .pricing-card.featured {
-    background: linear-gradient(180deg, #162447 0%, var(--bg-card) 100%);
+    background: linear-gradient(180deg, rgba(249, 115, 22, 0.1) 0%, var(--bg-card) 100%);
     border: 2px solid var(--accent);
     box-shadow: 0 10px 40px -10px rgba(249, 115, 22, 0.35);
     transform: scale(1.02);
@@ -1572,11 +1645,27 @@ textarea.form-control {
 }
 
 .chatbot-close-btn {
-    background: transparent;
-    color: var(--text-muted);
-    font-size: 1.1rem;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    padding: 0.25rem;
+    transition: all var(--transition-fast);
+}
+
+.chatbot-close-btn svg {
+    stroke: #ffffff;
+}
+
+.chatbot-close-btn:hover {
+    background: #ef4444;
+    border-color: #ef4444;
+    transform: scale(1.1);
 }
 
 .chatbot-body {
@@ -1781,8 +1870,8 @@ textarea.form-control {
 
 .video-modal-close {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 14px;
+    right: 14px;
     background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
     border: 2px solid #ffffff;
     color: #ffffff;
@@ -1793,17 +1882,25 @@ textarea.form-control {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 800;
     transition: all var(--transition-fast);
     z-index: 100;
     box-shadow: 0 4px 18px rgba(239, 68, 68, 0.7);
 }
 
+.video-modal-close svg {
+    stroke: #ffffff;
+    display: block;
+    transition: transform var(--transition-fast);
+}
+
 .video-modal-close:hover {
     background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
-    transform: scale(1.1) rotate(90deg);
+    transform: scale(1.1);
     box-shadow: 0 6px 24px rgba(239, 68, 68, 0.9);
+}
+
+.video-modal-close:hover svg {
+    transform: rotate(90deg);
 }
 
 .video-responsive-wrapper {
