@@ -28,8 +28,8 @@ const IPTV_CONFIG = {
 
     // ESTADÍSTICAS Y CONTADORES
     stats: {
-        liveChannels: "+15,000",
-        vodMovies: "+50,000",
+        liveChannels: "+6,000",
+        vodMovies: "+20,000",
         vodSeries: "+12,000",
         uptime: "99.9%",
         happyClients: "+28,500"
@@ -57,8 +57,8 @@ const IPTV_CONFIG = {
             },
             features: [
                 "1 Pantalla o Dispositivo",
-                "+15,000 Canales en Vivo (4K / FHD / HD)",
-                "+60,000 Películas y Series (VOD Actualizado)",
+                "+6,000 Canales en Vivo (4K / FHD / HD)",
+                "+20,000 Películas y Series (VOD Actualizado)",
                 "Deportes Premium, PPV y Ligas del Mundo",
                 "Guía de Programación Interactiva (EPG)",
                 "Compatible con Smart TV, Firestick, Móvil y PC",
@@ -88,8 +88,8 @@ const IPTV_CONFIG = {
             },
             features: [
                 "2 Pantallas en Simultáneo",
-                "+15,000 Canales en Vivo (4K / FHD / HD)",
-                "+60,000 Películas y Series (Estrenos Semanales)",
+                "+6,000 Canales en Vivo (4K / FHD / HD)",
+                "+20,000 Películas y Series (Estrenos Semanales)",
                 "Canales Deportivos Exclusivos y Eventos PPV",
                 "Guía EPG + Canales de Adultos (Opcional con PIN)",
                 "Servidores Ultra Rápidos CDN con Anti-Buffer",
@@ -119,8 +119,8 @@ const IPTV_CONFIG = {
             },
             features: [
                 "3 Pantallas en Simultáneo para toda la familia",
-                "+15,000 Canales Internacionales en Calidad 4K/FHD",
-                "Catálogo Completo VOD (Películas y Series Actualizadas)",
+                "+6,000 Canales Internacionales en Calidad 4K/FHD",
+                "Catálogo Completo VOD (+20,000 Películas y Series)",
                 "Fútbol en Vivo, Champions League, UFC, F1 y NBA",
                 "Contenido Infantil, Documentales y Noticias 24/7",
                 "Servidor Dedicado de Alta Disponibilidad",
@@ -441,7 +441,7 @@ const IPTV_CONFIG = {
         },
         {
             q: "¿Las apps de Smart TV requieren licencia adicional?",
-            a: "El servicio de MEGATV+ te incluye acceso total a la lista de más de 15,000 canales, películas y series en vivo. Si la aplicación reproductora que decides instalar en tu Smart TV requiere una licencia de activación propia de sus desarrolladores (como IBO Player, Bay TV, Bob Player o SET IPTV), dicho valor es propio de la app y se cancela por separado."
+            a: "El servicio de MEGATV+ te incluye acceso total a la lista de más de 6,000 canales, películas y series en vivo. Si la aplicación reproductora que decides instalar en tu Smart TV requiere una licencia de activación propia de sus desarrolladores (como IBO Player, Bay TV, Bob Player o SET IPTV), dicho valor es propio de la app y se cancela por separado."
         }
     ],
 
