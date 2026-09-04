@@ -481,37 +481,53 @@ function closeTrailerModal() {
 }
 
 /**
- * 11. SELECTOR INTERACTIVO DE MODO DUAL / CONFORT VISUAL
+ * 11. SELECTOR INTERACTIVO DE CONFORT VISUAL (3 MODOS: LUZ DÍA, CINE OLED, SLATE)
  */
 function initThemeSwitcher() {
     const themeBtn = document.getElementById("themeSwitchBtn");
     const themeIcon = document.getElementById("themeSwitchIcon");
     const themeText = document.getElementById("themeSwitchText");
 
-    // Leer tema guardado en localStorage o usar 'oled' por defecto
-    const savedTheme = localStorage.getItem("megatv_theme") || "oled";
+    // Leer tema guardado en localStorage o usar 'light' por defecto (Luz Día / Off-White)
+    const savedTheme = localStorage.getItem("megatv_theme") || "light";
     applyTheme(savedTheme);
 
     if (themeBtn) {
         themeBtn.addEventListener("click", () => {
-            const currentTheme = document.body.getAttribute("data-theme") === "slate" ? "slate" : "oled";
-            const newTheme = currentTheme === "oled" ? "slate" : "oled";
-            applyTheme(newTheme);
-            localStorage.setItem("megatv_theme", newTheme);
+            const currentTheme = document.body.getAttribute("data-theme") || "light";
+            let nextTheme = "light";
+            
+            // Ciclo rotativo de 3 modos: light -> oled -> slate -> light
+            if (currentTheme === "light") {
+                nextTheme = "oled";
+            } else if (currentTheme === "oled") {
+                nextTheme = "slate";
+            } else {
+                nextTheme = "light";
+            }
+
+            applyTheme(nextTheme);
+            localStorage.setItem("megatv_theme", nextTheme);
         });
     }
 
     function applyTheme(theme) {
-        if (theme === "slate") {
+        if (theme === "oled") {
+            document.body.setAttribute("data-theme", "oled");
+            if (themeIcon) themeIcon.textContent = "🌙";
+            if (themeText) themeText.textContent = "Cine OLED";
+            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Titanium Slate");
+        } else if (theme === "slate") {
             document.body.setAttribute("data-theme", "slate");
             if (themeIcon) themeIcon.textContent = "🍏";
             if (themeText) themeText.textContent = "Slate Suave";
-            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Cinema OLED (Descanso Total)");
+            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Luz Día (Limpio)");
         } else {
             document.body.removeAttribute("data-theme");
-            if (themeIcon) themeIcon.textContent = "🍿";
-            if (themeText) themeText.textContent = "Cine OLED";
-            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Titanium Slate (Grafito Suave)");
+            document.body.setAttribute("data-theme", "light");
+            if (themeIcon) themeIcon.textContent = "☀️";
+            if (themeText) themeText.textContent = "Luz Día";
+            if (themeBtn) themeBtn.setAttribute("title", "Cambiar a Modo Cine OLED (Oscuro)");
         }
     }
 }
