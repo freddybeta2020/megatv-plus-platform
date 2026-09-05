@@ -1,0 +1,6 @@
+﻿# robots.txt for MEGATV+
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://megatv-plus-platform.vercel.app/sitemap.xml
