@@ -363,8 +363,8 @@ function renderVodCatalog(filterCategory = "all") {
         filteredItems = items.filter(item => item.category === filterCategory);
     }
 
-    // Duplicamos 4 veces para tener un buffer infinito perfecto hacia la izquierda y derecha
-    let displayList = [...filteredItems, ...filteredItems, ...filteredItems, ...filteredItems];
+    // Duplicamos 2 veces para un carrusel fluido e infinito sin repeticiones seguidas
+    let displayList = [...filteredItems, ...filteredItems];
 
     container.innerHTML = "";
 
