@@ -577,7 +577,7 @@ function openTrailerModal(item) {
     audioEl.textContent = item.audio;
     availEl.textContent = `MEGATV+ (Disponible en Vivo y On Demand en todos los planes)`;
 
-    const waMsg = `Hola! Estuve viendo la ficha y tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 4 Horas para probar la calidad 4K.`;
+    const waMsg = `Hola! Estuve viendo la ficha y tráiler de *${item.title}* (${item.platform}) en la web de MEGATV+ y quiero mi Demo Gratis de 6 Horas para probar la calidad 4K.`;
     ctaBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMsg)}`;
 
     // Cargar tráiler de YouTube en alta definición con compatibilidad total

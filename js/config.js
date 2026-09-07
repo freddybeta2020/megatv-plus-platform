@@ -22,7 +22,7 @@ const IPTV_CONFIG = {
     whatsapp: {
         phoneNumber: "573013217824", // <-- WhatsApp Oficial de MEGATV+ (Colombia +57)
         defaultMessage: "Hola, vi su página web MEGATV+ y quiero más información sobre el servicio de IPTV.",
-        demoMessage: "Hola! Me gustaría solicitar una prueba gratis (demo de 4 horas) de MEGATV+ para probar el servicio en mi dispositivo.",
+        demoMessage: "Hola! Me gustaría solicitar una prueba gratis (demo de 6 horas) de MEGATV+ para probar el servicio en mi dispositivo.",
         supportMessage: "Hola, necesito asistencia técnica o tengo una consulta sobre mi cuenta de MEGATV+."
     },
 
@@ -421,7 +421,7 @@ const IPTV_CONFIG = {
         },
         {
             q: "¿Puedo solicitar una prueba gratis antes de pagar?",
-            a: "¡Sí, por supuesto! Ofrecemos una prueba gratuita de demostración (demo de 4 horas) para que compruebes la calidad de imagen, la estabilidad de los servidores y el catálogo completo antes de tomar una decisión."
+            a: "¡Sí, por supuesto! Ofrecemos una prueba gratuita de demostración (demo de 6 horas) para que compruebes la calidad de imagen, la estabilidad de los servidores y el catálogo completo antes de tomar una decisión."
         },
         {
             q: "¿En cuántos dispositivos puedo usar el servicio?",
@@ -429,7 +429,7 @@ const IPTV_CONFIG = {
         },
         {
             q: "¿Cuáles son los métodos de pago aceptados?",
-            a: "Aceptamos múltiples métodos de pago seguros: Tarjetas de Débito/Crédito, PayPal, Transferencias bancarias locales (según tu país), Mercado Pago, Zelle, Bizum y Criptomonedas (USDT/Bitcoin)."
+            a: "Aceptamos múltiples métodos de pago seguros e internacionales: Tarjetas de Débito/Crédito Internacionales (Visa, Mastercard, Amex), PayPal, Transferencias bancarias locales, Mercado Pago y Criptomonedas (USDT / Binance Pay / Bitcoin)."
         },
         {
             q: "¿Cuánto tarda la activación después del pago?",
@@ -449,7 +449,7 @@ const IPTV_CONFIG = {
     aiChatbot: {
         agentName: "MegaBot AI",
         agentRole: "Asesor Inteligente MEGATV+",
-        welcomeMessage: "👋 ¡Hola! Soy **MegaBot**, tu asesor de **MEGATV+**. Puedo responder tus dudas sobre canales, compatibilidad, apps recomendadas o ayudarte a activar tu **Prueba Gratis de 4 Horas**.",
+        welcomeMessage: "👋 ¡Hola! Soy **MegaBot**, tu asesor de **MEGATV+**. Puedo responder tus dudas sobre canales, compatibilidad, apps recomendadas o ayudarte a activar tu **Prueba Gratis de 6 Horas**.",
         quickReplies: [
             "🚀 Pedir Prueba Gratis",
             "💎 Ver Precios y Planes",

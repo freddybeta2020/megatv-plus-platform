@@ -173,11 +173,11 @@
         // 1. Detección de Intención: PRUEBA GRATIS / DEMO
         if (query.includes("prueba") || query.includes("demo") || query.includes("test") || query.includes("gratis") || query.includes("gratuita")) {
             sendBotMessage(
-                "¡Excelente! 🎉 Te activamos una **Prueba Gratis de 4 Horas** para que pruebes la estabilidad y calidad 4K en tu televisor, celular o TV Box.",
+                "¡Excelente! 🎉 Te activamos una **Prueba Gratis de 6 Horas** para que pruebes la estabilidad y calidad 4K en tu televisor, celular o TV Box.",
                 {
                     prompt: "Haz clic abajo para solicitar tu usuario y contraseña de prueba en WhatsApp:",
-                    btnText: "Pedir Demo de 4 Horas",
-                    waText: "Hola! Solicito una prueba gratis de 4 horas de IPTV para probar en mi dispositivo."
+                    btnText: "Pedir Demo de 6 Horas",
+                    waText: "Hola! Solicito una prueba gratis de 6 horas de IPTV para probar en mi dispositivo."
                 }
             );
             return;
@@ -241,10 +241,10 @@
         // 5. Detección de Intención: MÉTODOS DE PAGO / COMPRA
         if (query.includes("pago") || query.includes("pagar") || query.includes("tarjeta") || query.includes("paypal") || query.includes("transferencia") || query.includes("comprar") || query.includes("contratar") || query.includes("cuenta") || query.includes("banco") || query.includes("crypto") || query.includes("usdt")) {
             sendBotMessage(
-                "💳 Aceptamos múltiples medios de pago 100% seguros:\n\n" +
-                "✅ Tarjetas de Débito y Crédito (Visa / Mastercard)\n" +
+                "💳 Aceptamos múltiples medios de pago 100% seguros e internacionales:\n\n" +
+                "✅ Tarjetas de Débito y Crédito Internacionales (Visa / Mastercard / Amex)\n" +
                 "✅ PayPal Internacional\n" +
-                "✅ Transferencias locales (según tu país)\n" +
+                "✅ Transferencias bancarias y pagos locales\n" +
                 "✅ Criptomonedas (USDT / Binance Pay / Bitcoin)",
                 {
                     prompt: "Indícanos tu país en WhatsApp para enviarte los datos de pago exactos:",
@@ -282,7 +282,7 @@
 
         // 8. Respuesta Inteligente por defecto con Lead Routing
         sendBotMessage(
-            "Entendido. Como asesor de **" + IPTV_CONFIG.brand.name + "** puedo ayudarte a contratar tu plan, enviarte una demo gratis de 4 horas o resolver dudas sobre canales y compatibilidad.",
+            "Entendido. Como asesor de **" + IPTV_CONFIG.brand.name + "** puedo ayudarte a contratar tu plan, enviarte una demo gratis de 6 horas o resolver dudas sobre canales y compatibilidad.",
             {
                 prompt: "¿Prefieres que lo resolvamos directamente por WhatsApp?",
                 btnText: "Chatear por WhatsApp",
