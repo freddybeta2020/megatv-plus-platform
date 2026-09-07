@@ -239,13 +239,13 @@
         }
 
         // 5. Detección de Intención: MÉTODOS DE PAGO / COMPRA
-        if (query.includes("pago") || query.includes("pagar") || query.includes("tarjeta") || query.includes("paypal") || query.includes("transferencia") || query.includes("comprar") || query.includes("contratar") || query.includes("cuenta") || query.includes("banco") || query.includes("crypto") || query.includes("usdt")) {
+        if (query.includes("pago") || query.includes("pagar") || query.includes("tarjeta") || query.includes("paypal") || query.includes("western") || query.includes("remesa") || query.includes("moneygram") || query.includes("transferencia") || query.includes("comprar") || query.includes("contratar") || query.includes("cuenta") || query.includes("banco")) {
             sendBotMessage(
                 "💳 Aceptamos múltiples medios de pago 100% seguros e internacionales:\n\n" +
                 "✅ Tarjetas de Débito y Crédito Internacionales (Visa / Mastercard / Amex)\n" +
                 "✅ PayPal Internacional\n" +
-                "✅ Transferencias bancarias y pagos locales\n" +
-                "✅ Criptomonedas (USDT / Binance Pay / Bitcoin)",
+                "✅ Western Union (Giros en efectivo o desde app)\n" +
+                "✅ Transferencias bancarias y remesas",
                 {
                     prompt: "Indícanos tu país en WhatsApp para enviarte los datos de pago exactos:",
                     btnText: "Coordinar Pago Inmediato",
