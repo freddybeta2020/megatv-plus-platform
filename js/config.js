@@ -14,7 +14,7 @@ const IPTV_CONFIG = {
         supportHours: "24/7 Soporte Técnico y Atención en Línea",
         email: "contacto@megatvplus.com",
         location: "Servicio Internacional",
-        demoDurationHours: 4 // Horas de la prueba gratuita
+        demoDurationHours: 6 // Horas de la prueba gratuita
     },
 
     // CONFIGURACIÓN DE WHATSAPP (¡Edita tu número aquí!)

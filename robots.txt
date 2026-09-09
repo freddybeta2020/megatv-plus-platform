@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://megatv-plus-platform.vercel.app/sitemap.xml
+Sitemap: https://megatvplus.com/sitemap.xml
