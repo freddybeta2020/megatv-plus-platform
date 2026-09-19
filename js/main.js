@@ -152,7 +152,7 @@ function renderPricingCards() {
             <div style="font-size: 0.76rem; color: var(--text-dim); margin-bottom: 1rem; text-align: center;">
                 <i class="fas fa-info-circle"></i> Licencia de apps de terceros se cobra por separado si es requerida.
             </div>
-            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn ${isFeatured ? 'btn-primary' : 'btn-secondary'} btn-full">
+            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn ${isFeatured ? 'btn-whatsapp' : 'btn-secondary'} btn-full">
                 <i class="fab fa-whatsapp"></i> ${plan.ctaText}
             </a>
         `;
@@ -215,7 +215,7 @@ function renderDeviceDetail(device) {
             <div class="app-pills-container">
                 ${appPills}
             </div>
-            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            <a href="${waLink}" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
                 <i class="fab fa-whatsapp"></i> Solicitar Guía de Configuración
             </a>
         </div>

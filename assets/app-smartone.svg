@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="smBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="smAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <filter id="smGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  
+  <!-- App Icon Background -->
+  <rect x="6" y="6" width="108" height="108" rx="26" fill="url(#smBg)" filter="url(#smGlow)" />
+  <rect x="8" y="8" width="104" height="104" rx="24" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-width="2" />
+  
+  <!-- TV Monitor Frame -->
+  <rect x="28" y="28" width="64" height="46" rx="8" fill="none" stroke="url(#smAccent)" stroke-width="4" filter="url(#smGlow)"/>
+  <!-- TV Stand -->
+  <path d="M 52 74 L 68 74 M 60 74 L 60 80 M 48 80 L 72 80" stroke="url(#smAccent)" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Play Signal Inside TV -->
+  <polygon points="54,41 72,51 54,61" fill="#ffffff" />
+  
+  <!-- SmartOne Badge -->
+  <rect x="18" y="88" width="84" height="18" rx="9" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+  <text x="60" y="100" fill="#38bdf8" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="900" font-size="9" text-anchor="middle" letter-spacing="0.5">SMART ONE IPTV</text>
+</svg>

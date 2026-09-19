@@ -253,13 +253,15 @@ section {
 }
 
 .btn-whatsapp {
-    background: var(--whatsapp);
+    background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
     color: #ffffff;
-    box-shadow: 0 4px 15px var(--whatsapp-glow);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    border: none;
 }
 
 .btn-whatsapp:hover {
-    background: var(--whatsapp-hover);
+    background: linear-gradient(135deg, #1ebe5d 0%, #0d7367 100%);
+    color: #ffffff;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
 }
